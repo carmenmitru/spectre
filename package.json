@@ -28,7 +28,7 @@
         "matchdep": "~0.3.0",
         "mocha"     :  "~1.14.0",
         "sinon"     :  "~1.7.3",
-        "should"    :  "~2.0.2"
+        "should"    :  "~2.1.0"
     },
     "license": "MIT",
     "engines": {
