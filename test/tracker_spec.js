@@ -2,7 +2,8 @@ var sinon   = require('sinon'),
     should  = require('should'),
     Tracker = require('../lib/tracker');
 
-describe('Tracker', function(){
+/*global describe, it, before, beforeEach, after, afterEach */
+describe('Tracker', function () {
 
     describe('#track', function () {
         var tracker;
@@ -19,6 +20,6 @@ describe('Tracker', function(){
 
             spy.called.should.be.true;
         });
-    })
-})
+    });
+});
 
