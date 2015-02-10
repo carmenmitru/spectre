@@ -15,7 +15,7 @@ describe('Tracker', function () {
         it('should emit event when called', function () {
             var spy = sinon.spy();
 
-            tracker.on('new visit', spy);
+            tracker.on('track.new', spy);
             tracker.track();
 
             spy.called.should.be.true;
