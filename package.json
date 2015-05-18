@@ -1,40 +1,42 @@
 {
-    "name": "spectre-tracker",
-    "main": "lib/tracker.js",
-    "version": "0.0.1",
-    "author": "Fabian Becker <halfdan@xnorfz.de>",
-    "description": "Tracking library for the Spectre analytics package.",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/spectre/spectre-tracker.git"
-    },
-    "scripts": {
-        "test": "grunt test --verbose"
-    },
-    "keywords": [
-        "analytics",
-        "spectre",
-        "tracker"
-    ],
-    "files": [
-        "lib/"
-    ],
-    "dependencies" : {
-        "mongodb": "1.4.30",
-        "lodash": "3.1.0",
-        "ua-parser-js": "0.7.3"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.5",
-        "grunt-contrib-jshint": "~0.11.0",
-        "grunt-mocha-cli": "~1.12.0",
-        "matchdep": "~0.3.0",
-        "mocha": "~2.1.0",
-        "should": "~5.0.0",
-        "sinon": "~1.12.2"
-    },
-    "license": "MIT",
-    "engines": {
-        "node": ">=0.10"
-    }
+  "name": "spectre-tracker",
+  "main": "lib/tracker.js",
+  "version": "0.0.1",
+  "author": "Fabian Becker <halfdan@xnorfz.de>",
+  "description": "Tracking library for the Spectre analytics package.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spectre/spectre-tracker.git"
+  },
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
+  "keywords": [
+    "analytics",
+    "spectre",
+    "tracker"
+  ],
+  "files": [
+    "lib/"
+  ],
+  "dependencies": {
+    "knex": "^0.8.5",
+    "lodash": "3.8.0",
+    "moment": "2.10.2",
+    "sqlite3": "^3.0.8"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.11.2",
+    "grunt-mocha-cli": "~1.13.0",
+    "matchdep": "~0.3.0",
+    "mocha": "~2.2.5",
+    "node-uuid": "^1.4.3",
+    "should": "~6.0.1",
+    "sinon": "~1.12.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10"
+  }
 }
