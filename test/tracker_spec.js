@@ -68,5 +68,9 @@ describe('Tracker', function () {
       missingEventName.should.throwError('Missing arguments');
     });
   });
+
+  describe("#query", function () {
+
+  });
 });
 
