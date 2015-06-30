@@ -1,5 +1,5 @@
 var Tracker = require('../lib/tracker');
-t = new Tracker();
+var t = new Tracker();
 
 // Count a generic visit to a post with uuid 'abc'
 t.track('abc', 'post', 'visit');
@@ -15,6 +15,3 @@ t.track('abc', 'post', 'referrer', { value: 'http://google.com' });
 // Track when a logged in user visits a post
 // ToDo: Define how to query posts that have a visit by a userid
 t.track('abc', 'post', 'user.visit', { value: 'userid' });
-
-
-

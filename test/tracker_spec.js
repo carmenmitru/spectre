@@ -3,7 +3,10 @@ var sinon   = require('sinon'),
     uuid    = require('node-uuid'),
     Tracker = require('../lib/tracker');
 
-/*global describe, it, before, beforeEach, after, afterEach */
+// To stop jshint complaining
+should.equal(true, true);
+
+/*global describe, it, beforeEach */
 describe('Tracker', function () {
 
   describe('#track', function () {
@@ -23,7 +26,7 @@ describe('Tracker', function () {
           'visit'
       );
 
-      spy.called.should.be.true;
+      spy.called.should.equal(true);
     });
 
     it('emits uuid/options when called', function (done) {
@@ -52,7 +55,7 @@ describe('Tracker', function () {
           'visit.social'
       );
 
-      spy.calledTwice.should.be.true;
+      spy.calledTwice.should.equal(true);
     });
 
     it('errors if arguments are missing', function () {
