@@ -1,7 +1,7 @@
-var sinon   = require('sinon'),
-    should  = require('should'),
-    uuid    = require('node-uuid'),
-    Tracker = require('../lib/tracker');
+import sinon from 'sinon';
+import should from 'should';
+import uuid from 'node-uuid';
+import Tracker from '../lib/tracker';
 
 // To stop jshint complaining
 should.equal(true, true);

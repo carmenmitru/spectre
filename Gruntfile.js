@@ -12,7 +12,8 @@ module.exports = function (grunt) {
                     // browser environment
                     browser: false,
                     // allow dangling underscores in var names
-                    nomen: true
+                    nomen: true,
+		    esnext: true
                 },
                 files: {
                     src: [
@@ -29,7 +30,8 @@ module.exports = function (grunt) {
                     // allow dangling underscores in var names
                     nomen: true,
                     // allow expressions
-                    expr: true
+                    expr: true,
+                    esnext: true
                 },
                 files: {
                     src: [
