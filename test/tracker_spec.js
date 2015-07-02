@@ -8,12 +8,23 @@ should.equal(true, true);
 
 /*global describe, it, beforeEach */
 describe('Tracker', function () {
+  describe('#constructor', function() {
+    it('takes a config object', function() {
+      var config = {
+        forceSync: true
+      };
+      var tracker = new Tracker(config);
+
+      should.equal(tracker._config.forceSync, true);
+    });
+  });
 
   describe('#track', function () {
     var tracker;
 
-    beforeEach(function () {
+    beforeEach(function (done) {
       tracker = new Tracker();
+      tracker.init().then(done);
     });
 
     it('emits event when called', function () {
@@ -70,10 +81,13 @@ describe('Tracker', function () {
       missingResourceType.should.throwError('Missing arguments');
       missingEventName.should.throwError('Missing arguments');
     });
-  });
 
-  describe("#query", function () {
+    it('writes buffer when forceSync is passed', function() {
+      var spy = sinon.spy(tracker, '_writeBuffer');
 
+      tracker.track(uuid.v4(), 'post', 'visit', { forceSync: true });
+      spy.called.should.equal(true);
+    });
   });
 });
 
