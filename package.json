@@ -9,7 +9,7 @@
     "url": "https://github.com/spectre/spectre-tracker.git"
   },
   "scripts": {
-    "test": "grunt test --verbose"
+    "test": "gulp test"
   },
   "keywords": [
     "analytics",
@@ -26,9 +26,11 @@
     "sqlite3": "^3.0.8"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-jshint": "~0.11.2",
-    "grunt-mocha-cli": "~1.13.0",
+    "babel": "^5.6.14",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-mocha": "^2.1.2",
     "matchdep": "~0.3.0",
     "mocha": "~2.2.5",
     "node-uuid": "^1.4.3",
