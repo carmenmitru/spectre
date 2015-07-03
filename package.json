@@ -1,6 +1,6 @@
 {
   "name": "spectre-tracker",
-  "main": "lib/tracker.js",
+  "main": "dist/tracker.js",
   "version": "0.0.1",
   "author": "Fabian Becker <halfdan@xnorfz.de>",
   "description": "Tracking library for the Spectre analytics package.",
