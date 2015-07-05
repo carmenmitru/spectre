@@ -9,21 +9,43 @@ should.equal(true, true);
 /*global describe, it, beforeEach */
 describe('Tracker', function () {
   describe('#constructor', function() {
-    it('takes a config object', function() {
-      var config = {
-        forceSync: true
+    it('requires a tracker name', function () {
+      var trackerConstructor = function () {
+        /*jshint unused:false*/
+        var tracker = new Tracker();
       };
-      var tracker = new Tracker(config);
+
+      trackerConstructor.should.throwError('Missing tracker name');
+    });
+
+    it('takes a config object', function() {
+      var trackerName = 'test',
+        config = {
+          forceSync: true
+        };
+      var tracker = new Tracker(trackerName, config);
 
       should.equal(tracker._config.forceSync, true);
     });
+  });
+
+  describe('#init', function() {
+    it('fetches the tracker id', function(done) {
+      var tracker = new Tracker('test');
+      tracker.init().then(function () {
+        tracker.trackerId.should.be.type('number');
+        done(); 
+      });
+    });
+
+    it('creates new id if not found');
   });
 
   describe('#track', function () {
     var tracker;
 
     beforeEach(function (done) {
-      tracker = new Tracker();
+      tracker = new Tracker('test');
       tracker.init().then(done);
     });
 
@@ -88,6 +110,21 @@ describe('Tracker', function () {
       tracker.track(uuid.v4(), 'post', 'visit', { forceSync: true });
       spy.called.should.equal(true);
     });
+
+    it('accepts category when passed', function () {
+      tracker.track(uuid.v4(), 'post', 'visit', { category: 'foo'});
+
+    });
+  });
+
+  describe('#getTrackerName', function() {
+    it('returns the name of the tracker', function () {
+      var tracker = new Tracker('test');
+
+      should.equal(tracker.trackerName, 'test');
+    });
+
+
   });
 });
 

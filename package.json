@@ -20,6 +20,7 @@
     "lib/"
   ],
   "dependencies": {
+    "bluebird": "^2.9.32",
     "knex": "^0.8.5",
     "lodash": "3.8.0",
     "moment": "2.10.2",
