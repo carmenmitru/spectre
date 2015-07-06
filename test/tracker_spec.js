@@ -2,11 +2,12 @@ import sinon from 'sinon';
 import should from 'should';
 import uuid from 'node-uuid';
 import Tracker from '../lib/tracker';
+import Query from '../lib/query';
 
 // To stop jshint complaining
 should.equal(true, true);
 
-/*global describe, it, beforeEach */
+/*global describe, it, before, beforeEach */
 describe('Tracker', function () {
   describe('#constructor', function() {
     it('requires a tracker name', function () {
@@ -34,7 +35,7 @@ describe('Tracker', function () {
       var tracker = new Tracker('test');
       tracker.init().then(function () {
         tracker.trackerId.should.be.type('number');
-        done(); 
+        done();
       });
     });
 
@@ -123,8 +124,27 @@ describe('Tracker', function () {
 
       should.equal(tracker.trackerName, 'test');
     });
+  });
 
+  describe('#query', function() {
+    var tracker;
 
+    before(function() {
+      tracker = new Tracker('query');
+    });
+
+    it('returns a new query instance', function() {
+      // Empty options
+      tracker.query().should.be.instanceOf(Query);
+    });
+
+    it('takes query options', function () {
+      var query = tracker.query({
+        limit: 25,
+        event_name: 'visit'
+      });
+      should.equal(query.definition.limit, 25);
+      should.equal(query.definition.event_name, 'visit');
+    });
   });
 });
-
